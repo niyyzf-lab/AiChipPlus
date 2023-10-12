@@ -1,53 +1,46 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import { invoke } from "@tauri-apps/api/tauri";
-import "./App.css";
-
 function App() {
-  const [greetMsg, setGreetMsg] = useState("");
-  const [name, setName] = useState("");
-
-  async function greet() {
-    // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
-    setGreetMsg(await invoke("greet", { name }));
-  }
-
   return (
-    <div className="container">
-      <h1>Welcome to Tauri!</h1>
-
-      <div className="row">
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo vite" alt="Vite logo" />
-        </a>
-        <a href="https://tauri.app" target="_blank">
-          <img src="/tauri.svg" className="logo tauri" alt="Tauri logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React" />
-        </a>
+    <div className="flex justify-center h-screen w-screen flex-col">
+      <div className=" flex justify-center">
+        <div className="hero min-h-screen bg-base-200" style={{ backgroundImage: 'url(https://daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.jpg)' }}>
+          <div className="hero-content flex-col lg:flex-row">
+            <div className="card lg:card-side bg-base-100 shadow-xl">
+              <figure className=" min-w-[400px]">
+                <div className="card flex-shrink-0 w-full max-w-2xl shadow-2xl bg-base-100">
+                  <form className="card-body ">
+                    <div className="form-control">
+                      <label className="label">
+                        <span className="label-text">邮箱/账号</span>
+                      </label>
+                      <input type="email" placeholder="email/account " className="input input-bordered" required />
+                    </div>
+                    <div className="form-control">
+                      <label className="label">
+                        <span className="label-text">密码</span>
+                      </label>
+                      <input type="password" placeholder="password" className="input input-bordered" required />
+                      <label className="label">
+                        <a href="#" className="label-text-alt link link-hover">忘记密码?</a>
+                      </label>
+                    </div>
+                    <div className="flex mt-6 w-full justify-between  flex-wrap flex-1 gap-4">
+                      <button className="btn btn-primary grow">Login</button>
+                      <button className="btn grow basis-4">Sigin</button>
+                    </div>
+                  </form>
+                </div>
+              </figure>
+              <div className="card-body">
+                <div className="text-center lg:text-left">
+                  <h1 className="text-5xl font-bold">现在登陆!</h1>
+                  <p className="py-6 lg:max-w-xs">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <p>Click on the Tauri, Vite, and React logos to learn more.</p>
-
-      <form
-        className="row"
-        onSubmit={(e) => {
-          e.preventDefault();
-          greet();
-        }}
-      >
-        <input
-          id="greet-input"
-          onChange={(e) => setName(e.currentTarget.value)}
-          placeholder="Enter a name..."
-        />
-        <button type="submit">Greet</button>
-      </form>
-
-      <p>{greetMsg}</p>
-    </div>
-  );
+    </div>);
 }
 
 export default App;
