@@ -2,7 +2,7 @@ function App() {
   return (
     <div className="flex justify-center h-screen w-screen flex-col">
       <div className=" flex justify-center">
-        <div className="hero min-h-screen" style={{ backgroundImage: 'url(https://daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.jpg)' }}>
+        <div className="hero min-h-screen" style={{ backgroundImage: 'url(/public/img/bg.jpg)' }}>
           <div className="hero-content flex-col lg:flex-row">
             <div className="card lg:card-side bg-base-100 shadow-2xl">
               <figure className=" min-w-[400px]">
