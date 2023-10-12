@@ -2,11 +2,11 @@ function App() {
   return (
     <div className="flex justify-center h-screen w-screen flex-col">
       <div className=" flex justify-center">
-        <div className="hero min-h-screen bg-base-200" style={{ backgroundImage: 'url(https://daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.jpg)' }}>
+        <div className="hero min-h-screen" style={{ backgroundImage: 'url(https://daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.jpg)' }}>
           <div className="hero-content flex-col lg:flex-row">
-            <div className="card lg:card-side bg-base-100 shadow-xl">
+            <div className="card lg:card-side bg-base-100 shadow-2xl">
               <figure className=" min-w-[400px]">
-                <div className="card flex-shrink-0 w-full max-w-2xl shadow-2xl bg-base-100">
+                <div className="card flex-shrink-0 w-full">
                   <form className="card-body ">
                     <div className="form-control">
                       <label className="label">
@@ -24,8 +24,8 @@ function App() {
                       </label>
                     </div>
                     <div className="flex mt-6 w-full justify-between  flex-wrap flex-1 gap-4">
-                      <button className="btn btn-primary grow">Login</button>
-                      <button className="btn grow basis-4">Sigin</button>
+                      <button className="btn btn-primary grow">登陆 Login</button>
+                      <button className="btn grow basis-4">注册 Sigin</button>
                     </div>
                   </form>
                 </div>
