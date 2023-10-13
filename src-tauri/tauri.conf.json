@@ -2,7 +2,7 @@
   "build": {
     "beforeDevCommand": "yarn dev",
     "beforeBuildCommand": "yarn build",
-    "devPath": "http://localhost:1420",
+    "devPath": "http://localhost:1420/login",
     "distDir": "../dist",
     "withGlobalTauri": false
   },
@@ -16,6 +16,9 @@
       "shell": {
         "all": false,
         "open": true
+      },
+      "window": {
+        "all": true
       }
     },
     "bundle": {
@@ -36,10 +39,13 @@
     "windows": [
       {
         "fullscreen": false,
-        "resizable": true,
+        "resizable": false,
         "title": "AiChipPlus",
+        "label": "main",
         "width": 800,
-        "height": 600
+        "height": 450,
+        "transparent": true,
+        "decorations": false
       }
     ]
   }
