@@ -7,8 +7,8 @@
     "withGlobalTauri": false
   },
   "package": {
-    "productName": "ai_chip_plus",
-    "version": "0.0.2"
+    "productName": "AI芯片质检 Plus",
+    "version": "0.0.4"
   },
   "tauri": {
     "allowlist": {
@@ -29,7 +29,6 @@
         "icons/32x32.png",
         "icons/128x128.png",
         "icons/128x128@2x.png",
-        "icons/icon.icns",
         "icons/icon.ico"
       ],
       "windows": {
@@ -73,7 +72,8 @@
         "height": 720,
         "transparent": true,
         "decorations": false,
-        "visible": false
+        "visible": false,
+        "center": true
       }
     ]
   }
