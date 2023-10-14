@@ -1,6 +1,7 @@
 import { useState } from "react";
-import waves from "/Img/login_left/waves.jpg";
+import zigzag_lines from "/Img/login_left/zigzag-lines.png";
 import { WebviewWindow } from "@tauri-apps/api/window";
+import TitleBar from "../../../assembly/titlebar";
 
 const Login = () => {
   const [language, setLanguage] = useState("English");
@@ -9,9 +10,12 @@ const Login = () => {
     e.preventDefault();
     console.log("Login");
     //修改home窗体的可见属性
-    const home_windows=WebviewWindow.getByLabel('home')
+    let home_windows=WebviewWindow.getByLabel('home')
     if(home_windows){
       home_windows.show()
+    }
+    else{
+      home_windows=new WebviewWindow('home')
     }
     const login_windows=WebviewWindow.getByLabel('login')
     if(login_windows){
@@ -20,8 +24,9 @@ const Login = () => {
   };
   return (
     <div className="relative flex overflow-hidden">
+      <TitleBar/>
       <select
-        className="select bg-transparent text-white focus:text-black focus:bg-white active:bg-white border-0 absolute z-[51] "
+        className="select bg-transparent text-black focus:bg-white active:bg-white border-0 absolute z-[51] "
         onChange={(e) => {
           setLanguage(e.target.value);
         }}
@@ -31,7 +36,7 @@ const Login = () => {
       </select>
       <div className="w-1/2 h-screen overflow-hidden">
         <img
-          src={waves}
+          src={zigzag_lines}
           alt="Movie"
           className="object-cover w-full h-full"
         />
