@@ -1,5 +1,5 @@
 import { useState } from "react";
-import waves from "/Img/login_left/waves.jpg";
+import zigzag_lines from "/Img/login_left/zigzag-lines.png";
 import { WebviewWindow } from "@tauri-apps/api/window";
 import TitleBar from "../../../assembly/titlebar";
 
@@ -36,7 +36,7 @@ const Login = () => {
       </select>
       <div className="w-1/2 h-screen overflow-hidden">
         <img
-          src={waves}
+          src={zigzag_lines}
           alt="Movie"
           className="object-cover w-full h-full"
         />
