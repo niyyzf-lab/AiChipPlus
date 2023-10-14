@@ -3,17 +3,6 @@
 version = 3
 
 [[package]]
-name = "AiChipPlus"
-version = "0.0.0"
-dependencies = [
- "serde",
- "serde_json",
- "tauri",
- "tauri-build",
- "window-shadows",
-]
-
-[[package]]
 name = "addr2line"
 version = "0.21.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -35,6 +24,17 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b2969dcb958b36655471fc61f7e416fa76033bdd4bfed0678d8fee1e2d07a1f0"
 dependencies = [
  "memchr",
+]
+
+[[package]]
+name = "ai_chip_plus"
+version = "0.0.0"
+dependencies = [
+ "serde",
+ "serde_json",
+ "tauri",
+ "tauri-build",
+ "window-shadows",
 ]
 
 [[package]]

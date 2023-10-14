@@ -2,13 +2,13 @@
   "build": {
     "beforeDevCommand": "yarn dev",
     "beforeBuildCommand": "yarn build",
-    "devPath": "http://localhost:1420/login",
+    "devPath": "http://localhost:1420",
     "distDir": "../dist",
     "withGlobalTauri": false
   },
   "package": {
-    "productName": "AiChipPlus",
-    "version": "0.0.1"
+    "productName": "ai_chip_plus",
+    "version": "0.0.2"
   },
   "tauri": {
     "allowlist": {
@@ -24,7 +24,7 @@
     "bundle": {
       "active": true,
       "targets": "all",
-      "identifier": "com.AiChipPlus.dev",
+      "identifier": "com.aichipplus.dev",
       "icon": [
         "icons/32x32.png",
         "icons/128x128.png",
@@ -45,7 +45,7 @@
           "type": "downloadBootstrapper"
         },
         "wix": {
-          "language": "zh-CN34"
+          "language": "zh-CN"
         }
       }
     },
@@ -57,11 +57,23 @@
         "fullscreen": false,
         "resizable": false,
         "title": "AiChipPlus",
-        "label": "main",
+        "label": "login",
         "width": 800,
         "height": 450,
         "transparent": true,
         "decorations": false
+      },
+      {
+        "fullscreen": false,
+        "resizable": true,
+        "title": "AiChipPlus",
+        "label": "home",
+        "url": "/home",
+        "width": 1200,
+        "height": 720,
+        "transparent": true,
+        "decorations": false,
+        "visible": false
       }
     ]
   }

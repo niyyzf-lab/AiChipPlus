@@ -1,5 +1,5 @@
 [package]
-name = "AiChipPlus"
+name = "ai_chip_plus"
 version = "0.0.0"
 description = "A Tauri App"
 authors = ["you"]
