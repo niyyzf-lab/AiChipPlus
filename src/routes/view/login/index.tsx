@@ -1,29 +1,29 @@
-import { useState } from "react";
+import { useState, useEffect  } from "react";
 import waves from "/Img/login_left/waves.jpg";
 import { WebviewWindow } from "@tauri-apps/api/window";
 import TitleBar from "../../../assembly/titlebar";
+import { themeChange } from 'theme-change';
 
 const Login = () => {
   const [language, setLanguage] = useState("English");
   const LogingIn = (e: any) => {
     // appWindow.alert("Login")
     e.preventDefault();
-    //修改home窗体的可见属性
-    let home_windows=WebviewWindow.getByLabel('home')
-    if(home_windows){
-      home_windows.show()
+    // 修改home窗体的可见属性
+    let home_windows = WebviewWindow.getByLabel("home");
+    if (home_windows) {
+      home_windows.show();
+    } else {
+      home_windows = new WebviewWindow("home");
     }
-    else{
-      home_windows=new WebviewWindow('home')
-    }
-    const login_windows=WebviewWindow.getByLabel('login')
-    if(login_windows){
-      login_windows.hide()
+    const login_windows = WebviewWindow.getByLabel("login");
+    if (login_windows) {
+      login_windows.hide();
     }
   };
   return (
-    <div className="relative flex overflow-hidden">
-      <TitleBar/>
+    <div className="select-none relative flex overflow-hidden">
+      <TitleBar />
       <select
         className="select bg-transparent  text-white focus:text-black focus:bg-white active:bg-white border-0 absolute z-[51] "
         onChange={(e) => {
@@ -34,15 +34,11 @@ const Login = () => {
         <option>简体中文</option>
       </select>
       <div className="w-1/2 h-screen overflow-hidden">
-        <img
-          src={waves}
-          alt="Movie"
-          className="object-cover w-full h-full"
-        />
+        <img src={waves} alt="Movie" className="object-cover w-full h-full" />
       </div>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 pt-5">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-          <h2 className="mt-4 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
+          <h2 className="mt-4 text-center text-2xl font-bold leading-9 tracking-tight">
             {language === "English" ? "Sign in to your account" : "欢迎回来"}
           </h2>
         </div>
@@ -56,7 +52,7 @@ const Login = () => {
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium leading-6 text-gray-900"
+                className="block text-sm font-medium leading-6"
               >
                 {language === "English" ? "Email Address" : "邮箱"}
               </label>
@@ -67,7 +63,7 @@ const Login = () => {
                   type="email"
                   autoComplete="email"
                   required
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 pl-2"
+                  className="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 pl-2"
                 />
               </div>
             </div>
@@ -76,7 +72,7 @@ const Login = () => {
               <div className="flex items-center justify-between">
                 <label
                   htmlFor="password"
-                  className="block text-sm font-medium leading-6 text-gray-900"
+                  className="block text-sm font-medium leading-6"
                 >
                   {language === "English" ? "Password" : "密码"}
                 </label>
@@ -96,7 +92,7 @@ const Login = () => {
                   type="password"
                   autoComplete="current-password"
                   required
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 pl-2"
+                  className="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 pl-2"
                 />
               </div>
             </div>
