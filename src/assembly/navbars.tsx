@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
-
+import { appWindow,WebviewWindow } from "@tauri-apps/api/window"
 const navigation = [
   { name: "Dashboard", href: "#", current: true },
   { name: "Team", href: "#", current: false },
@@ -14,6 +14,14 @@ function classNames(...classes: string[]) {
 }
 
 const NavBars = () => {
+    const signOut = () => {
+        const home_windows=WebviewWindow.getByLabel("home")
+        const login_windows=WebviewWindow.getByLabel("login")
+        if(home_windows&&login_windows){
+            home_windows.hide()
+            login_windows.show()
+        }
+    }
   return (
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
@@ -128,7 +136,7 @@ const NavBars = () => {
                             className={classNames(
                               active ? "bg-gray-100" : "",
                               "block px-4 py-2 text-sm text-gray-700"
-                            )}
+                            )} onClick={() => signOut()}
                           >
                             Sign out
                           </a>

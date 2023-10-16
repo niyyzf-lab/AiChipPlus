@@ -18,7 +18,7 @@ const Login = () => {
     }
     const login_windows=WebviewWindow.getByLabel('login')
     if(login_windows){
-      login_windows.close()
+      login_windows.hide()
     }
   };
   return (
