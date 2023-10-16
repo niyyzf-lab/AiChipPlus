@@ -1,11 +1,11 @@
-const Home=()=>{
-    return(
-        <div className="rounded-xl">
-            <div className="row">
-                <div className="col-md-12">
-                    <h1>Home</h1>
-                </div>
-            </div>
+import { useState } from "react";
+import NavBars from "../../../assembly/navbars";
+import Content from "../../../assembly/content";
+const Home = () => {
+    return (
+        <div className=" flex flex-col w-screen h-screen overflow-hidden">
+            <NavBars />
+            <Content />
         </div>
     )
 }
