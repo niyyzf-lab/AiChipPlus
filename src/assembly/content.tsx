@@ -1,3 +1,4 @@
+import { invoke } from "@tauri-apps/api";
 const Content = () => {
     return (
         <div className="w-full h-screen p-20">
@@ -7,7 +8,9 @@ const Content = () => {
                 </div>
                 <div className="s flex flex-col">
                     <div className="flex gap-6">
-                        <button className="btn">Start</button>
+                        <button className="btn"  onClick={()=>{
+                            invoke("create_window",{title:"abs",link:"https://tauri.app/zh-cn/v1/guides/features/multiwindow/",decorations:false})
+                        }}>Start</button>
                         <button className="btn">Stop</button>
                         <button className="btn">Reset</button>
                     </div>

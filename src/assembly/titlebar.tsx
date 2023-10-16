@@ -1,5 +1,5 @@
 import { appWindow, WebviewWindow } from "@tauri-apps/api/window";
-import { IoClose, IoRemove, IoStopOutline } from "react-icons/io5";
+import { IoClose, IoRemove } from "react-icons/io5";
 import { IconContext } from "react-icons";
 
 const TitleBar = () => {
@@ -14,11 +14,9 @@ const TitleBar = () => {
   return (
     <div
       data-tauri-drag-region
-      className="flex absolute flex-row-reverse w-full p-2 space-x-2 z-50"
+      className="flex absolute flex-row-reverse w-full p-2 space-x-2 z-50 "
     >
-      <IconContext.Provider
-        value={{ className: "text-red", size: "2em" }}
-      >
+      <IconContext.Provider value={{ className: "text-red", size: "2em" }}>
         <div onClick={() => closeWindows()}>
           <IoClose />
         </div>
@@ -26,7 +24,6 @@ const TitleBar = () => {
           <IoRemove />
         </div>
       </IconContext.Provider>
-      
     </div>
   );
 };

@@ -25,7 +25,7 @@ const Login = () => {
     <div className="select-none relative flex overflow-hidden">
       <TitleBar />
       <select
-        className="select bg-transparent  text-white focus:text-black focus:bg-white active:bg-white border-0 absolute z-[51] "
+        className="select bg-transparent  text-white focus:text-black focus:bg-white active:bg-white border-0 absolute z-[51]"
         onChange={(e) => {
           setLanguage(e.target.value);
         }}
