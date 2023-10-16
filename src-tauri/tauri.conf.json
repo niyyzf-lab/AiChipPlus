@@ -73,7 +73,9 @@
         "transparent": true,
         "decorations": false,
         "visible": false,
-        "center": true
+        "center": true,
+        "minWidth": 1000,
+        "minHeight": 720
       }
     ]
   }
