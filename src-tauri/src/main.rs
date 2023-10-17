@@ -12,16 +12,19 @@ fn greet(name: &str) -> String {
 }
 
 #[tauri::command]
-async fn create_window(app: tauri::AppHandle, title: String, link: String,decorations:Option<bool>) -> Result<(), String> {
-    let window = WindowBuilder::new(
-        &app,
-        &title,
-        tauri::WindowUrl::App(link.into())
-        
-    )
-    .decorations(decorations.unwrap_or(true))
-    .center()
-    .build().map_err(|_| "failed to build window")?;
+async fn create_window(
+    app: tauri::AppHandle,
+    title: String,
+    link: String,
+    decorations: Option<bool>,
+) -> Result<(), String> {
+    let window = WindowBuilder::new(&app, &title, tauri::WindowUrl::App(link.into()))
+        .decorations(decorations.unwrap_or(true))
+        .center()
+        .resizable(true)
+        .visible(false)
+        .build()
+        .map_err(|_| "failed to build window")?;
     set_shadow(&window, true).map_err(|_| "Unsupported platform!")?;
     Ok(())
 }
@@ -32,7 +35,7 @@ fn main() {
             set_window_shadow(app);
             Ok(())
         })
-        .invoke_handler(tauri::generate_handler![greet,create_window])
+        .invoke_handler(tauri::generate_handler![greet, create_window])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }

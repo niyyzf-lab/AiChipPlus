@@ -60,22 +60,10 @@
         "width": 800,
         "height": 450,
         "transparent": true,
-        "decorations": false
-      },
-      {
-        "fullscreen": false,
-        "resizable": true,
-        "title": "AiChipPlus",
-        "label": "home",
-        "url": "/home",
-        "width": 1200,
-        "height": 720,
-        "transparent": true,
         "decorations": false,
-        "visible": false,
         "center": true,
-        "minWidth": 1000,
-        "minHeight": 720
+        "focus": true,
+        "alwaysOnTop": true
       }
     ]
   }
