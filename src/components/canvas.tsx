@@ -5,23 +5,17 @@ const Canvas = () => {
   let cam: RefObject<HTMLCanvasElement> = useRef<HTMLCanvasElement>(null);
   const ctx: CanvasRenderingContext2D | null =
     cam.current?.getContext("2d") ?? null;
-let socket: WebSocket;
-const [isEnabled, setCameraEnabled] = useState(false);
+  let socket: WebSocket;
+  const [isEnabled, setCameraEnabled] = useState(false);
 
   useEffect(() => {
     if (ctx) {
-
-        socket = new WebSocket("ws://127.0.0.1:1234");
-        socket.binaryType = "arraybuffer";
+      socket = new WebSocket("ws://127.0.0.1:1234");
+      socket.binaryType = "arraybuffer";
       socket.onmessage = (event) => {
         const arrayBuffer = event.data;
         const imageData = new Uint8Array(arrayBuffer);
 
-        // Check if the length of the image data is correct
-        if (imageData.length !== 640 * 480 * 3) {
-          console.error("Invalid image data length");
-          return;
-        }
 
         const image = new ImageData(640, 480);
 
@@ -51,25 +45,23 @@ const [isEnabled, setCameraEnabled] = useState(false);
     }
   }, [cam.current]);
   useBeforeUnload((e) => {
-    console.error("refresh")
-});
-const CameraStart = () => {
+    console.error("refresh");
+  });
+  const CameraStart = () => {
     setCameraEnabled(true);
-};
-const CameraStop = () => {
+  };
+  const CameraStop = () => {
     setCameraEnabled(false);
-};
-const CameraReset = () => {
+  };
+  const CameraReset = () => {
     // reset web socket
     // socket.close();
     // socket = new WebSocket("ws://127.0.0.1:1234");
-
-
-};
+  };
   return (
     <div>
       <canvas ref={cam} id="cam" width={"640px"} height={"480px"}></canvas>
-      <div className="s flex flex-col">
+      <div className=" flex flex-col">
         <div className="flex gap-6">
           <button className="btn" onClick={CameraStart}>
             Start
