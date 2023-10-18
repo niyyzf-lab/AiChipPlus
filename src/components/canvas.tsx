@@ -52,7 +52,14 @@ const Canvas = () => {
     setCameraEnabled(true);
   };
   const CameraStop = () => {
-    invoke("close_rear_end");
+    socket = new WebSocket("ws://127.0.0.1:5678");
+    socket.addEventListener("open", (event) => {
+      console.log("WebSocket连接已打开");
+
+      // 发送命令
+      const command = { command: "exit" };
+      socket.send(JSON.stringify(command));
+    });
     setCameraEnabled(false);
   };
   const CameraReset = () => {

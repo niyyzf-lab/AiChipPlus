@@ -4,7 +4,7 @@ use std::process::Command;
 
 use crate::utils::set_window_shadow;
 mod utils;
-use tauri::{command, WindowBuilder};
+use tauri::WindowBuilder;
 use window_shadows::set_shadow;
 
 // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
@@ -47,12 +47,9 @@ async fn start_rear_end(handle: tauri::AppHandle) {
         .replace("\\\\?\\", "");
     println!("{:?}", start_path);
     println!("{:?}", py_runtime);
-    //调用 py_Runtime 执行 Start_path
-    let cmd = Command::new(py_runtime)
-        .arg(start_path)
-        .spawn()
-        .expect("failed to start python");
-    println!("{:?}", cmd);
+    //作为子线程启动py脚本并持续输出打印结果
+    let child = Command::new(py_runtime).arg(start_path).spawn();
+    println!("{:?}", child);
 }
 #[tauri::command]
 async fn close_rear_end(_handle: tauri::AppHandle) {
@@ -61,8 +58,20 @@ async fn close_rear_end(_handle: tauri::AppHandle) {
     cmd.arg("/t");
     cmd.arg("/im");
     cmd.arg("python.exe");
-    cmd.output().expect("failed to close python");
+
+    let output = cmd.output().expect("failed to close python");
+
+    if !output.stdout.is_empty() {
+        let stdout = String::from_utf8_lossy(&output.stdout);
+        println!("Close Python stdout: {}", stdout);
+    }
+
+    if !output.stderr.is_empty() {
+        let stderr = String::from_utf8_lossy(&output.stderr);
+        println!("Close Python stderr: {}", stderr);
+    }
 }
+
 fn main() {
     tauri::Builder::default()
         .setup(|app| {
