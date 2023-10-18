@@ -1,5 +1,6 @@
 import { appWindow } from "@tauri-apps/api/window";
 import { FiX, FiMinus, FiMaximize } from "react-icons/fi";
+import { invoke } from "@tauri-apps/api";
 import {
   Navbar,
   NavbarBrand,
@@ -96,7 +97,10 @@ const Navbars = () => {
             </Button>
             <Button
               isIconOnly
-              onClick={() => appWindow.close()}
+              onClick={() => {
+                appWindow.close();
+                invoke("close_rear_end");
+              }}
               className=" p-1 z-[100] hover:bg-red-500 bg-transparent hover:text-white  "
             >
               <FiX />

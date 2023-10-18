@@ -1,5 +1,6 @@
 import { RefObject, useEffect, useRef, useState } from "react";
 import { useBeforeUnload } from "react-router-dom";
+import { invoke } from "@tauri-apps/api";
 
 const Canvas = () => {
   let cam: RefObject<HTMLCanvasElement> = useRef<HTMLCanvasElement>(null);
@@ -10,12 +11,11 @@ const Canvas = () => {
 
   useEffect(() => {
     if (ctx) {
-      socket = new WebSocket("ws://127.0.0.1:1234");
+      socket = new WebSocket("ws://127.0.0.1:11234");
       socket.binaryType = "arraybuffer";
       socket.onmessage = (event) => {
         const arrayBuffer = event.data;
         const imageData = new Uint8Array(arrayBuffer);
-
 
         const image = new ImageData(640, 480);
 
@@ -48,9 +48,11 @@ const Canvas = () => {
     console.error("refresh");
   });
   const CameraStart = () => {
+    invoke("start_rear_end");
     setCameraEnabled(true);
   };
   const CameraStop = () => {
+    invoke("close_rear_end");
     setCameraEnabled(false);
   };
   const CameraReset = () => {
