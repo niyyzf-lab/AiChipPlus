@@ -32,35 +32,36 @@ async fn create_window(
 }
 
 #[tauri::command]
-fn start_rear_end(handle: tauri::AppHandle) {
-    let Start_path = handle
+async fn start_rear_end(handle: tauri::AppHandle) {
+    let start_path = handle
         .path_resolver()
         .resolve_resource("model/test3.py")
         .expect("failed to resolve resource")
         .to_string_lossy()
         .replace("\\\\?\\", "");
-    let py_Runtime = handle
+    let py_runtime = handle
         .path_resolver()
         .resolve_resource("model/envs/np/python.exe")
         .expect("failed to resolve resource")
         .to_string_lossy()
         .replace("\\\\?\\", "");
-    println!("{:?}", Start_path);
-    println!("{:?}", py_Runtime);
+    println!("{:?}", start_path);
+    println!("{:?}", py_runtime);
     //调用 py_Runtime 执行 Start_path
-    let mut cmd = Command::new(py_Runtime);
-    cmd.arg(Start_path);
-    cmd.spawn().expect("failed to start python");
-    println!("{:?}", cmd.output().expect("failed to start python"));
+    let cmd = Command::new(py_runtime)
+        .arg(start_path)
+        .spawn()
+        .expect("failed to start python");
+    println!("{:?}", cmd);
 }
 #[tauri::command]
-fn close_rear_end(handle: tauri::AppHandle) {
+async fn close_rear_end(_handle: tauri::AppHandle) {
     let mut cmd = Command::new("taskkill");
     cmd.arg("/f");
     cmd.arg("/t");
     cmd.arg("/im");
     cmd.arg("python.exe");
-    cmd.spawn().expect("failed to start python");
+    cmd.output().expect("failed to close python");
 }
 fn main() {
     tauri::Builder::default()

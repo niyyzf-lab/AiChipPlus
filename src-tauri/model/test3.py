@@ -42,6 +42,7 @@ async def chat(websocket: websockets.WebSocketClientProtocol):
     except ConnectionClosedError as e:
         print(e)
         print("ConnectionClosedError")
+        exit()
         return
 
 

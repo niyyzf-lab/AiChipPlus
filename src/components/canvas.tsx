@@ -11,7 +11,7 @@ const Canvas = () => {
 
   useEffect(() => {
     if (ctx) {
-      socket = new WebSocket("ws://127.0.0.1:11234");
+      socket = new WebSocket("ws://127.0.0.1:1234");
       socket.binaryType = "arraybuffer";
       socket.onmessage = (event) => {
         const arrayBuffer = event.data;
