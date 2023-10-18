@@ -1,0 +1,13 @@
+prefix=E:/AiChipPlus/src-tauri/model/envs/np/Library
+exec_prefix=E:/AiChipPlus/src-tauri/model/envs/np/Library
+libdir=E:/AiChipPlus/src-tauri/model/envs/np/Library/lib
+sharedlibdir=E:/AiChipPlus/src-tauri/model/envs/np/Library/lib
+includedir=E:/AiChipPlus/src-tauri/model/envs/np/Library/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.2.13
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}

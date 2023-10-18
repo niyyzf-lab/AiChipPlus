@@ -6,7 +6,6 @@ const Content = () => {
         <div className="col-span-2 w-full rounded-xl">
           <Canvas />
         </div>
-
       </div>
     </div>
   );
