@@ -8,7 +8,7 @@
   },
   "package": {
     "productName": "AI芯片质检 Plus",
-    "version": "0.0.6"
+    "version": "0.0.7"
   },
   "tauri": {
     "allowlist": {
@@ -58,7 +58,7 @@
         "title": "AiChipPlus",
         "label": "login",
         "width": 800,
-        "height": 450,
+        "height": 482,
         "transparent": true,
         "decorations": false,
         "center": true,
