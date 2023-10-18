@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
-import { WebviewWindow } from "@tauri-apps/api/window"
+import { WebviewWindow } from "@tauri-apps/api/window";
 const navigation = [
   { name: "Dashboard", href: "#", current: true },
   { name: "Team", href: "#", current: false },
@@ -14,23 +14,21 @@ function classNames(...classes: string[]) {
 }
 
 const NavBars = () => {
-    const signOut = () => {
-        const home_windows=WebviewWindow.getByLabel("home")
-        const login_windows=WebviewWindow.getByLabel("login")
-        if(home_windows&&login_windows){
-            home_windows.hide()
-            login_windows.show()
-        }
+  const signOut = () => {
+    const home_windows = WebviewWindow.getByLabel("home");
+    const login_windows = WebviewWindow.getByLabel("login");
+    if (home_windows && login_windows) {
+      home_windows.hide();
+      login_windows.show();
     }
+  };
   return (
-    <Disclosure as="nav" className="bg-gray-800">
+    <Disclosure  as="nav" className="bg-gray-800">
       {({ open }) => (
         <>
-          <div
-            className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8"
-          >
-            <div className="relative flex h-16 items-center justify-between ">
-              <div className="absolute inset-y-0 left-0 flex items-center sm:hidden z-10">
+          <div data-tauri-drag-region className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+            <div data-tauri-drag-region className="relative flex h-16 items-center justify-between ">
+              <div data-tauri-drag-region className="absolute inset-y-0 left-0 flex items-center sm:hidden z-10">
                 {/* Mobile menu button*/}
                 <Disclosure.Button className=" relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                   <span className="absolute -inset-0.5" />
@@ -136,7 +134,8 @@ const NavBars = () => {
                             className={classNames(
                               active ? "bg-gray-100" : "",
                               "block px-4 py-2 text-sm text-gray-700"
-                            )} onClick={() => signOut()}
+                            )}
+                            onClick={() => signOut()}
                           >
                             Sign out
                           </a>
