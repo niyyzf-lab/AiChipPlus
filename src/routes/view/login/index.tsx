@@ -1,24 +1,27 @@
-import { useState  } from "react";
+import { useState } from "react";
 import waves from "/Img/login_left/waves.jpg";
-import { WebviewWindow } from "@tauri-apps/api/window";
-import TitleBar from "../../../assembly/titlebar";
+import { LogicalSize, WebviewWindow } from "@tauri-apps/api/window";
+import TitleBar from "./titlebar";
+import { invoke } from "@tauri-apps/api/tauri";
 
 const Login = () => {
   const [language, setLanguage] = useState("English");
   const LogingIn = (e: any) => {
     // appWindow.alert("Login")
     e.preventDefault();
-    // 修改home窗体的可见属性
-    let home_windows = WebviewWindow.getByLabel("home");
-    if (home_windows) {
-      home_windows.show();
-    } else {
-      home_windows = new WebviewWindow("home");
-    }
-    const login_windows = WebviewWindow.getByLabel("login");
-    if (login_windows) {
-      login_windows.hide();
-    }
+    //创建home窗体
+    invoke("create_window", {
+      title: "home",
+      link: "/home",
+      decorations: false,
+    }).then((_) => {
+      let Windows = WebviewWindow.getByLabel("home");
+      Windows?.setSize(new LogicalSize(1200, 800));
+      Windows?.center();
+      Windows?.show();
+      Windows = WebviewWindow.getByLabel("login");
+      Windows?.close();
+    });
   };
   return (
     <div className="select-none relative flex overflow-hidden">
