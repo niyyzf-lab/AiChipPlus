@@ -1,11 +1,9 @@
-import { appWindow, WebviewWindow } from "@tauri-apps/api/window";
+import { appWindow } from "@tauri-apps/api/window";
 import { FiX, FiMinus, FiMaximize } from "react-icons/fi";
 import {
   Navbar,
   NavbarBrand,
   NavbarContent,
-  NavbarItem,
-  Link,
   Input,
   DropdownItem,
   DropdownTrigger,
@@ -91,14 +89,14 @@ const Navbars = () => {
             <Button
               isIconOnly
               variant="light"
-              onClick={() => appWindow.minimize()}
+              onClick={() => appWindow.maximize()}
               className=" p-1 z-[100]  "
             >
               <FiMaximize />
             </Button>
             <Button
               isIconOnly
-              onClick={() => appWindow.minimize()}
+              onClick={() => appWindow.close()}
               className=" p-1 z-[100] hover:bg-red-500 bg-transparent hover:text-white  "
             >
               <FiX />

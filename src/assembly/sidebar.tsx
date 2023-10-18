@@ -5,14 +5,7 @@ import { AiOutlineHome } from "react-icons/ai";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { SiAboutdotme } from "react-icons/si";
 import { FcSettings } from "react-icons/fc";
-import {
-  Button,
-  Card,
-  CardBody,
-  Image,
-  Listbox,
-  ListboxItem,
-} from "@nextui-org/react";
+import { Button, Listbox, ListboxItem } from "@nextui-org/react";
 import { tv } from "tailwind-variants";
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
