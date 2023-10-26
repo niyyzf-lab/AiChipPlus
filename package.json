@@ -1,5 +1,5 @@
 {
-  "name": "AiChipPlus",
+  "name": "AiChipProMax",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,28 +10,30 @@
     "tauri": "tauri"
   },
   "dependencies": {
-    "@headlessui/react": "^1.7.17",
-    "@heroicons/react": "^2.0.18",
-    "@nextui-org/react": "^2.1.13",
+    "@fluentui/react-components": "^9.35.1",
     "@tauri-apps/api": "^1.5.0",
-    "framer-motion": "^10.16.4",
-    "heroicons": "^2.0.18",
+    "classnames": "^2.3.2",
+    "localforage": "^1.10.0",
+    "mac-scrollbar": "^0.10.7",
+    "match-sorter": "^6.3.1",
+    "re-resizable": "^6.9.11",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.11.0",
-    "tailwind-variants": "^0.1.14",
-    "theme-change": "^2.5.0"
+    "react-masonry-css": "^1.0.16",
+    "react-router-dom": "^6.17.0",
+    "react-xarrows": "^2.0.2",
+    "recharts": "^2.9.0",
+    "sort-by": "^1.2.0"
   },
   "devDependencies": {
-    "@iconify/react": "^4.1.1",
     "@tauri-apps/cli": "^1.5.0",
+    "@types/d3": "^7.4.2",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@vitejs/plugin-react": "^4.0.3",
     "autoprefixer": "^10.4.16",
-    "daisyui": "^3.9.2",
     "postcss": "^8.4.31",
-    "react-router-dom": "^6.16.0",
     "tailwindcss": "^3.3.3",
     "typescript": "^5.0.2",
     "vite": "^4.4.4"

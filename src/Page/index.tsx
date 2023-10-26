@@ -1,15 +1,11 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-const Root = () => {
+
+const page = () => {
   const navigate = useNavigate();
   useEffect(() => {
     navigate("/login");
-  });
-  return (
-    <>
-      <h1>Hello world!</h1>
-    </>
-  );
+  }, []);
+  return <></>;
 };
-
-export default Root;
+export default page;

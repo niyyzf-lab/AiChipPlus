@@ -7,47 +7,64 @@
     "withGlobalTauri": false
   },
   "package": {
-    "productName": "AI芯片质检 Plus",
-    "version": "0.0.8"
+    "productName": "AiChipProMax",
+    "version": "0.0.0"
   },
   "tauri": {
     "allowlist": {
-      "all": false,
+      "all": true,
       "shell": {
-        "all": false,
+        "all": true,
         "open": true
       },
       "window": {
-        "all": true
+        "all": true,
+        "center": false,
+        "close": false,
+        "create": false,
+        "hide": false,
+        "maximize": false,
+        "minimize": false,
+        "print": false,
+        "requestUserAttention": false,
+        "setAlwaysOnTop": false,
+        "setClosable": false,
+        "setContentProtected": false,
+        "setCursorGrab": false,
+        "setCursorIcon": false,
+        "setCursorPosition": false,
+        "setCursorVisible": false,
+        "setDecorations": false,
+        "setFocus": false,
+        "setFullscreen": false,
+        "setIcon": false,
+        "setIgnoreCursorEvents": false,
+        "setMaxSize": false,
+        "setMaximizable": false,
+        "setMinSize": false,
+        "setMinimizable": false,
+        "setPosition": false,
+        "setResizable": false,
+        "setSize": false,
+        "setSkipTaskbar": false,
+        "setTitle": false,
+        "show": false,
+        "startDragging": false,
+        "unmaximize": false,
+        "unminimize": false
       }
     },
     "bundle": {
       "active": true,
       "targets": "all",
-      "identifier": "com.aichipplus.dev",
+      "identifier": "com.AiChip.dev",
       "icon": [
         "icons/32x32.png",
         "icons/128x128.png",
         "icons/128x128@2x.png",
+        "icons/icon.icns",
         "icons/icon.ico"
-      ],
-      "resources": ["model/*"],
-      "windows": {
-        "allowDowngrades": true,
-        "certificateThumbprint": null,
-        "digestAlgorithm": null,
-        "nsis": null,
-        "timestampUrl": null,
-        "tsp": false,
-        "webviewFixedRuntimePath": null,
-        "webviewInstallMode": {
-          "silent": true,
-          "type": "downloadBootstrapper"
-        },
-        "wix": {
-          "language": "zh-CN"
-        }
-      }
+      ]
     },
     "security": {
       "csp": null
@@ -55,16 +72,16 @@
     "windows": [
       {
         "fullscreen": false,
-        "resizable": false,
-        "title": "AiChipPlus",
-        "label": "login",
-        "width": 800,
-        "height": 482,
-        "transparent": true,
+        "resizable": true,
+        "title": "AiChipProMax",
+        "label": "aiChip",
+        "width": 1200,
+        "height": 700,
+        "minHeight": 700,
+        "minWidth": 500,
         "decorations": false,
         "center": true,
-        "focus": true,
-        "alwaysOnTop": true
+        "transparent": true
       }
     ]
   }
