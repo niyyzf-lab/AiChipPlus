@@ -49,7 +49,7 @@ const Sign = () => {
                 className="w-12 h-12 mx-auto text-gray-300"
                 aria-hidden="true"
               />
-              <div className="flex mt-4 text-sm leading-6 text-gray-600">
+              <div className="flex flex-col mt-4 text-sm leading-6 text-gray-600">
                 <label
                   htmlFor="file-upload"
                   className="relative font-semibold text-indigo-600 bg-white rounded-md cursor-pointer focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500"
