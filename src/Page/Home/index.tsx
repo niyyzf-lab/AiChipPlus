@@ -1,11 +1,37 @@
-import { Button, Tooltip, TabList, Tab } from "@fluentui/react-components";
-import { appWindow, WebviewWindow } from "@tauri-apps/api/window";
+/*
+ *                        _oo0oo_
+ *                       o8888888o
+ *                       88" . "88
+ *                       (| -_- |)
+ *                       0\  =  /0
+ *                     ___/`---'\___
+ *                   .' \\|     |// '.
+ *                  / \\|||  :  |||// \
+ *                 / _||||| -:- |||||- \
+ *                |   | \\\  - /// |   |
+ *                | \_|  ''\---/''  |_/ |
+ *                \  .-\__  '-'  ___/-. /
+ *              ___'. .'  /--.--\  `. .'___
+ *           ."" '<  `.___\_<|>_/___.' >' "".
+ *          | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+ *          \  \ `_.   \_ __\ /__ _/   .-` /  /
+ *      =====`-.____`.___ \_____/___.-`___.-'=====
+ *                        `=---='
+ *
+ *
+ *      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ *
+ *            佛祖保佑       永不宕机     永无BUG
+ */
+
+import { Button, Tab, TabList, Tooltip } from "@fluentui/react-components";
+import { WebviewWindow, appWindow } from "@tauri-apps/api/window";
 import { useState } from "react";
 import {
   MdClose,
+  MdCloseFullscreen,
   MdMinimize,
   MdOpenInFull,
-  MdCloseFullscreen,
 } from "react-icons/md";
 import { Link, Outlet } from "react-router-dom";
 

@@ -1,9 +1,35 @@
+/*
+ *                        _oo0oo_
+ *                       o8888888o
+ *                       88" . "88
+ *                       (| -_- |)
+ *                       0\  =  /0
+ *                     ___/`---'\___
+ *                   .' \\|     |// '.
+ *                  / \\|||  :  |||// \
+ *                 / _||||| -:- |||||- \
+ *                |   | \\\  - /// |   |
+ *                | \_|  ''\---/''  |_/ |
+ *                \  .-\__  '-'  ___/-. /
+ *              ___'. .'  /--.--\  `. .'___
+ *           ."" '<  `.___\_<|>_/___.' >' "".
+ *          | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+ *          \  \ `_.   \_ __\ /__ _/   .-` /  /
+ *      =====`-.____`.___ \_____/___.-`___.-'=====
+ *                        `=---='
+ *
+ *
+ *      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ *
+ *            佛祖保佑       永不宕机     永无BUG
+ */
+
 import { Button, Card, CardHeader, Label } from "@fluentui/react-components";
-import { BiChip } from "react-icons/bi";
 import c from "classnames";
-import { LineChart, Line, Tooltip, ResponsiveContainer } from "recharts";
-import { IoMdRefresh } from "react-icons/io";
+import { BiChip } from "react-icons/bi";
 import { GoNumber } from "react-icons/go";
+import { IoMdRefresh } from "react-icons/io";
+import { Line, LineChart, ResponsiveContainer, Tooltip } from "recharts";
 const ChangeCard = ({
   className,
   data,
@@ -11,6 +37,7 @@ const ChangeCard = ({
   className?: string;
   data: Array<any>;
 }) => {
+  //实例数据结构 删除 外部传入
   data = [
     {
       name: "Page A",

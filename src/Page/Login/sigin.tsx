@@ -1,10 +1,48 @@
+/*
+ *                        _oo0oo_
+ *                       o8888888o
+ *                       88" . "88
+ *                       (| -_- |)
+ *                       0\  =  /0
+ *                     ___/`---'\___
+ *                   .' \\|     |// '.
+ *                  / \\|||  :  |||// \
+ *                 / _||||| -:- |||||- \
+ *                |   | \\\  - /// |   |
+ *                | \_|  ''\---/''  |_/ |
+ *                \  .-\__  '-'  ___/-. /
+ *              ___'. .'  /--.--\  `. .'___
+ *           ."" '<  `.___\_<|>_/___.' >' "".
+ *          | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+ *          \  \ `_.   \_ __\ /__ _/   .-` /  /
+ *      =====`-.____`.___ \_____/___.-`___.-'=====
+ *                        `=---='
+ *
+ *
+ *      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ *
+ *            佛祖保佑       永不宕机     永无BUG
+ */
+
 import { Avatar, Button, Divider } from "@fluentui/react-components";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Sign = () => {
   const router = useNavigate();
-  const uploadFile = (file: File) => {};
+  const [loadFile, setLoadFile] = useState<File>();
+  const uploadFile = (file: File) => {
+    setLoadFile(file);
+  };
+  const handleSubmit = () => {
+    //表单提交事件
+    //TODO:提交后端
+    //TODO:跳转页面 使用router.push()
+    //TODO:登录逻辑判断
+    //TODO:上传文件 文件对象在loadFile中获取
+  };
   return (
+    //注册表单
     <form className="flex items-center justify-center w-full h-full overflow-hidden">
       <div className="w-full h-full max-w-xl max-h-screen p-10 space-y-8">
         <div className="flex items-center md:mt-4">
@@ -140,7 +178,11 @@ const Sign = () => {
           </div>
         </div>
         <div>
-          <Button className="block w-full" appearance="primary">
+          <Button
+            className="block w-full"
+            appearance="primary"
+            onClick={handleSubmit}
+          >
             Sign Up
           </Button>
         </div>

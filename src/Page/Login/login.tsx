@@ -1,3 +1,29 @@
+/*
+ *                        _oo0oo_
+ *                       o8888888o
+ *                       88" . "88
+ *                       (| -_- |)
+ *                       0\  =  /0
+ *                     ___/`---'\___
+ *                   .' \\|     |// '.
+ *                  / \\|||  :  |||// \
+ *                 / _||||| -:- |||||- \
+ *                |   | \\\  - /// |   |
+ *                | \_|  ''\---/''  |_/ |
+ *                \  .-\__  '-'  ___/-. /
+ *              ___'. .'  /--.--\  `. .'___
+ *           ."" '<  `.___\_<|>_/___.' >' "".
+ *          | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+ *          \  \ `_.   \_ __\ /__ _/   .-` /  /
+ *      =====`-.____`.___ \_____/___.-`___.-'=====
+ *                        `=---='
+ *
+ *
+ *      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ *
+ *            佛祖保佑       永不宕机     永无BUG
+ */
+
 import { Button, Checkbox, Input, Link } from "@fluentui/react-components";
 import { LogicalSize, WebviewWindow } from "@tauri-apps/api/window";
 import { useState } from "react";
@@ -9,6 +35,9 @@ const Login = () => {
   const router = useNavigate();
   const [isPassword, setIsPassword] = useState(true);
   const LoginToHome = () => {
+    //登录
+    //router.navigate
+    //TODO:登录成功后跳转
     router("/home");
     const window = WebviewWindow.getByLabel("aiChip");
     window?.setSize(new LogicalSize(1200, 800));

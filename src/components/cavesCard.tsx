@@ -1,7 +1,33 @@
-import { Card, CardHeader, Button, Label } from "@fluentui/react-components";
-import { VscDebugStart, VscDebugRestart, VscDebugStop } from "react-icons/vsc";
-import { AiFillVideoCamera } from "react-icons/ai";
+/*
+ *                        _oo0oo_
+ *                       o8888888o
+ *                       88" . "88
+ *                       (| -_- |)
+ *                       0\  =  /0
+ *                     ___/`---'\___
+ *                   .' \\|     |// '.
+ *                  / \\|||  :  |||// \
+ *                 / _||||| -:- |||||- \
+ *                |   | \\\  - /// |   |
+ *                | \_|  ''\---/''  |_/ |
+ *                \  .-\__  '-'  ___/-. /
+ *              ___'. .'  /--.--\  `. .'___
+ *           ."" '<  `.___\_<|>_/___.' >' "".
+ *          | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+ *          \  \ `_.   \_ __\ /__ _/   .-` /  /
+ *      =====`-.____`.___ \_____/___.-`___.-'=====
+ *                        `=---='
+ *
+ *
+ *      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ *
+ *            佛祖保佑       永不宕机     永无BUG
+ */
+
+import { Button, Card, CardHeader, Label } from "@fluentui/react-components";
 import c from "classnames";
+import { AiFillVideoCamera } from "react-icons/ai";
+import { VscDebugRestart, VscDebugStart, VscDebugStop } from "react-icons/vsc";
 const CavesCard = ({ className }: { className?: string }) => {
   return (
     <Card className={c("", className)}>
@@ -32,6 +58,7 @@ const CavesCard = ({ className }: { className?: string }) => {
           </div>
         }
       />
+      {/**canvas */}
       <canvas id="canvas" className="h-20 bg-black rounded " />
     </Card>
   );

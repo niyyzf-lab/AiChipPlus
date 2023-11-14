@@ -1,26 +1,54 @@
-import CavesCard from "../../../components/cavesCard";
-import ChangeCard from "../../../components/changeCard";
-import YiYanCard from "../../../components/yiYanCard";
-import NormalCard from "../../../components/normalCard";
-import "mac-scrollbar/dist/mac-scrollbar.css";
+/*
+ *                        _oo0oo_
+ *                       o8888888o
+ *                       88" . "88
+ *                       (| -_- |)
+ *                       0\  =  /0
+ *                     ___/`---'\___
+ *                   .' \\|     |// '.
+ *                  / \\|||  :  |||// \
+ *                 / _||||| -:- |||||- \
+ *                |   | \\\  - /// |   |
+ *                | \_|  ''\---/''  |_/ |
+ *                \  .-\__  '-'  ___/-. /
+ *              ___'. .'  /--.--\  `. .'___
+ *           ."" '<  `.___\_<|>_/___.' >' "".
+ *          | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+ *          \  \ `_.   \_ __\ /__ _/   .-` /  /
+ *      =====`-.____`.___ \_____/___.-`___.-'=====
+ *                        `=---='
+ *
+ *
+ *      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ *
+ *            佛祖保佑       永不宕机     永无BUG
+ */
+
+import { Label } from "@fluentui/react-components";
 import { MacScrollbar } from "mac-scrollbar";
+import "mac-scrollbar/dist/mac-scrollbar.css";
+import { AiOutlinePercentage } from "react-icons/ai";
 import {
+  BiSolidDownArrow,
   BiSolidErrorCircle,
   BiSolidUpArrow,
-  BiSolidDownArrow,
 } from "react-icons/bi";
 import { GoNumber } from "react-icons/go";
-import { Label } from "@fluentui/react-components";
 import { VscPassFilled } from "react-icons/vsc";
-import { AiOutlinePercentage } from "react-icons/ai";
 import PieChartWithCustomizedLabelCard from "../../../components/PieChartWithCustomizedLabelCard";
 import ArrowInfoCard from "../../../components/arrowInfoCard";
+import CavesCard from "../../../components/cavesCard";
+import ChangeCard from "../../../components/changeCard";
+import NormalCard from "../../../components/normalCard";
+import YiYanCard from "../../../components/yiYanCard";
 const MonitorPage = () => {
   return (
     <MacScrollbar className="flex flex-col w-full gap-4 p-10 pt-5 overflow-y-auto">
       <div className="flex w-full h-48 gap-2 ">
+        {/**总量展示组件 传入data*/}
         <ChangeCard data={[]} className="flex-1 " />
         <div className="flex min-w-[200px] flex-col gap-2 ">
+          {/**残次率展示组件 传入data*/}
           <NormalCard
             className="flex-1 "
             header={
@@ -45,6 +73,7 @@ const MonitorPage = () => {
               </div>
             </div>
           </NormalCard>
+          {/**合格率展示组件 传入data*/}
           <NormalCard
             className="flex-1 "
             header={
@@ -70,11 +99,15 @@ const MonitorPage = () => {
             </div>
           </NormalCard>
         </div>
+        {/**饼图控件 传入data */}
         <PieChartWithCustomizedLabelCard className="flex-1 " data={[]} />
+        {/**一言*/}
         <YiYanCard className="flex-1 " />
       </div>
       <div className="flex flex-1 min-h-[400px] gap-2">
+        {/**监视控件 */}
         <CavesCard className="flex-1 " />
+        {/*引脚列表展示控件 传入data */}
         <ArrowInfoCard />
       </div>
     </MacScrollbar>
