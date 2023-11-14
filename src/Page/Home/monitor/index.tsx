@@ -76,7 +76,6 @@ const MonitorPage = () => {
       <div className="flex flex-1 min-h-[400px] gap-2">
         <CavesCard className="flex-1 " />
         <ArrowInfoCard />
-        asdasd
       </div>
     </MacScrollbar>
   );
