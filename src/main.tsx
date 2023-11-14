@@ -33,7 +33,7 @@ import "./styles.css";
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <FluentProvider theme={teamsLightTheme}>
-      //路由入口
+      {/**路由入口 */}
       <RouterProvider router={router} />
     </FluentProvider>
   </React.StrictMode>
